@@ -1,0 +1,13 @@
+/*   Override the elements styles   */
+
+.c-sidebar-nav-icon {
+    height: auto;
+}
+
+#document_form .form-group {
+    display: none;
+}
+
+#document_form #save_button {
+    display: none;
+}
