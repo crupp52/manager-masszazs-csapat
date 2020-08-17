@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\ServicePhoto;
 use Illuminate\Database\Eloquent\Model;
 
 class Service extends Model
@@ -14,6 +13,6 @@ class Service extends Model
 
     public function photos()
     {
-        return $this->hasMany(ServicePhoto::class);
+        return $this->hasMany(ServicePhoto::class)->where('status', 1);
     }
 }

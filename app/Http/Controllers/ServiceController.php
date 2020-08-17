@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
-use App\ServicePhoto;
+use App\Models\ServicePhoto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Kris\LaravelFormBuilder\FormBuilder;
@@ -99,6 +99,19 @@ class ServiceController extends Controller
             return redirect()->route('admin.service.index')->with('success', 'A szolgáltatás mentése sikeres volt!');
         } else {
             return redirect()->back()->with('error', 'A szolgáltatás mentése közben hiba lépett fel!');
+        }
+    }
+
+    public function deletePhoto($id)
+    {
+        $servicePhoto = ServicePhoto::where('id', $id)->firstOrFail();
+
+        $servicePhoto->status = 0;
+
+        if ($servicePhoto->save()){
+            return redirect()->back()->with('success', 'A kép törlése sikeres volt.');
+        }else{
+            return redirect()->back()->with('error', 'A kép törlése közben hiba lépett fel.');
         }
     }
 }

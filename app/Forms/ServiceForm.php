@@ -12,7 +12,7 @@ class ServiceForm extends Form
         $this
             ->add('title', Field::TEXT, [
                 'label' => 'Szolgáltatás neve',
-                'rules' => 'required',
+//                'rules' => 'required',
                 'error_messages' => [
                     'description.required' => "A mező kitörléte kötelező."
                 ]
@@ -20,7 +20,7 @@ class ServiceForm extends Form
             ->add('description', 'ckeditor-field', [
                 'label' => 'Leírás',
                 'name' => 'description',
-                'content' => $this->getModel()->description,
+                'content' => isset($this->getModel()->description) ? $this->getModel()->description : '',
                 'rules' => 'required',
                 'error_messages' => [
                     'description.required' => "A mező kitörléte kötelező."
@@ -34,14 +34,15 @@ class ServiceForm extends Form
                 ]
             ]);
 
-        if ($this->getModel()->photos->count() > 0) {
+        if (isset($this->getModel()->photos) && $this->getModel()->photos->count() > 0) {
             $this
                 ->add('open', 'uploaded-photo-field-open');
 
             foreach ($this->getModel()->photos as $key => $photo) {
                 $this
                     ->add('uploaded_photos_' . $key, 'uploaded-photo-field', [
-                        'filename' => $photo->filename
+                        'filename' => $photo->filename,
+                        'id' => $photo->id
                     ]);
             }
 

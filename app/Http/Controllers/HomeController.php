@@ -2,27 +2,37 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
-        return view('home');
+        return view('index.index');
+    }
+
+    public function services()
+    {
+        $services = Service::where('status', 1)->get();
+
+        return view('services.index', [
+            'services' => $services
+        ]);
+    }
+
+    public function prices()
+    {
+        return view('prices.index');
+    }
+
+    public function team()
+    {
+        return view('team.index');
+    }
+
+    public function contact()
+    {
+        return view('contact.index');
     }
 }
