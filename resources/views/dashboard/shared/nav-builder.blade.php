@@ -1,10 +1,17 @@
-{{--<div class="c-sidebar-brand"><img class="c-sidebar-brand-full" src="{{ env('APP_URL', '') }}/assets/brand/coreui-base-white.svg" width="118" height="46" alt="CoreUI Logo"><img class="c-sidebar-brand-minimized" src="assets/brand/coreui-signet-white.svg" width="118" height="46" alt="CoreUI Logo"></div>--}}
+<div class="c-sidebar-brand"><h3>Admin</h3></div>
 <ul class="c-sidebar-nav">
     <li class="c-sidebar-nav-item">
         <a class="c-sidebar-nav-link" href="{{ route('admin.service.index') }}">
             <span class="c-sidebar-nav-icon">
                 <i class="fa fa-hand-holding"></i>
             </span> Szolgáltatások
+        </a>
+    </li>
+    <li class="c-sidebar-nav-item">
+        <a class="c-sidebar-nav-link" href="https://cpanel11.rackforest.com:2096/webmaillogout.cgi" target="_blank">
+            <span class="c-sidebar-nav-icon">
+                <i class="fa fa-envelope"></i>
+            </span> Emailek
         </a>
     </li>
 </ul>
