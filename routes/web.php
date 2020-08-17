@@ -1,6 +1,6 @@
 <?php
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('szolgaltatasok', 'HomeController@services')->name('services');

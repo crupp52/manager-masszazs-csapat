@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ asset('customer/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('customer/css/owl.theme.default.min.css') }}">
     <link rel="stylesheet" href="{{ asset('customer/fonts/flaticon/font/flaticon.css') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('customer/css/aos.css') }}">
 {{--    <link rel="stylesheet" href="{{ asset('css/app.css') }}">--}}
     <link rel="stylesheet" href="{{ asset('customer/css/style.css') }}">
