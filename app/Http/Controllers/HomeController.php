@@ -9,7 +9,11 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('index.index');
+        $service = Service::where('id', 1000)->first();
+
+        return view('index.index', [
+            'service' => $service
+        ]);
     }
 
     public function services()

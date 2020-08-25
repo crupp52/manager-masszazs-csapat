@@ -21,11 +21,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 blog-content">
-                    {{--                    <p class="lead">Amennyiben Ön munkáltató, akkor valószínűleg kipihent, nagyobb munkakedvű, lojális és produktívabb munkaerőt szeretne. Amennyiben Ön munkavállaló, szeretné, ha teljesítményét a vezetőség is értékelné.</p>--}}
-                    <p class="lead">Üdvözlöm, Horváth Viktória vagyok. Hetedik éve foglalkozom masszázzsal aktívan. A masszázs, mint szolgáltatás egyre népszerűbb, egyre több helyen található meg.</p>
-                    <p>Azonban masszázs és masszázs között is hatalmas különbség van! Gondolom ezt Önök is, tapasztalták már! Ez függ a masszázs típusától, a masszőr személyétől és tudásától, a környezettől és a masszírozandó alanytól.</p>
-                    <p>Különleges masszőr-csapat vagyunk, akik kicsit többet adnak a szolgáltatáshoz, mint az átlag. (Természetesen az etikai szabályokat betartva csak tisztességes ún. hagyományos masszázsokról lévén szó!) Önöknek nem kell keresgélni! Csapatommal felkeressük Önt, és szívesen tájékoztatjuk a szolgáltatásainkról.</p>
-                    <p>Részletekért és árajánlatért keressen bizalommal!</p>
+                    {!! $service->description !!}
                 </div>
 
             </div>
