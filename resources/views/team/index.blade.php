@@ -25,76 +25,23 @@
             </div>
             <div class="row align-items-stretch">
 
-                <div class="col-lg-4 col-md-6 mb-5">
-                    <div class="post-entry-1 h-100 person-1">
-                        <img src="{{ asset('images/team/horvath_viktoria.jpg') }}" alt="Image" class="img-fluid">
-                        <div class="post-entry-1-contents">
-                            <h2>Horváth Viktória</h2>
-                            <ul style="text-align: left">
-                                <li>Frissítő, reflexológiai jellegű és thai talpmasszázs</li>
-                                <li>Frissítő arc-es dekoltázs masszázs</li>
-                                <li>Triggerpont</li>
-                                <li>Nyirokmasszazs</li>
-                                <li>Egyéb energiák: reiki, orosz, prána, access</li>
-                            </ul>
-{{--                            <p>Frissítő svéd relaxáló teljes test masszázs, manager masszázs, frissítő arcmasszázs, talpmasszázs, hátmasszázs. Triggerpont terápia, nyirok masszázs, thai talpmasszázs, talpmasszázs reflexológiai jellegű, baba masszázs, reiki mester/tanár, orosz energia (Vörös Mária), prána 1,2,3. Access: Face Lifting (arc fiatalítás), függőségek-kedélybetegslgek oldása.</p>--}}
+                @foreach($staff as $employee)
+                    <div class="col-lg-4 col-md-6 mb-5">
+                        <div class="post-entry-1 h-100 person-1">
+                            @if(isset($employee->filename))
+                                <img style="max-width: 200px;max-height: 200px;width: auto;height: auto;" src="{{ asset('storage/images/' . $employee->filename) }}" alt="Image" class="img-fluid">
+                            @endif
+                            <div class="post-entry-1-contents">
+                                <h2>{{ $employee->name }}</h2>
+                                <div style="text-align: left">
+                                    {!! $employee->description !!}
+                                </div>
+                                {{--                            <p>Frissítő svéd relaxáló teljes test masszázs, manager masszázs, frissítő arcmasszázs, talpmasszázs, hátmasszázs.</p>--}}
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-5">
-                    <div class="post-entry-1 h-100 person-1">
-                        <img src="{{ asset('images/team/kmetti_balazs.jpg') }}" alt="Image" class="img-fluid">
-                        <div class="post-entry-1-contents">
-                            <h2>Kmetti Balázs</h2>
-                            <ul style="text-align: left">
-                                <li>Tradicionális thai masszázs</li>
-                                <li>Reiki</li>
-                            </ul>
-{{--                            <p>Frissítő svéd relaxáló teljes test masszázs, manager masszázs, frissítő arcmasszázs, talpmasszázs, hátmasszázs. Tradicionális thai masszázs</p>--}}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-5">
-                    <div class="post-entry-1 h-100 person-1">
-                        <img src="{{ asset('images/team/romhanyi_david.jpg') }}" alt="Image" class="img-fluid">
-                        <div class="post-entry-1-contents">
-                            <h2>Romhányi Dávid</h2>
-                            <ul style="text-align: left">
-                                <li>Frissítő arc és dekoltázs masszázs</li>
-                                <li>Frissítő talpmasszázs</li>
-                                <li>Energiák: Access</li>
-                            </ul>
-{{--                            <p>Frissítő svéd relaxáló teljes test masszázs, manager masszázs, frissítő arcmasszázs, talpmasszázs, hátmasszázs, energetizáló masszázs, relaxációs masszázs és Access</p>--}}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-5">
-                    <div class="post-entry-1 h-100 person-1">
-                        <img src="{{ asset('images/team/lehotzki_gabriella.jpg') }}" alt="Image" class="img-fluid">
-                        <div class="post-entry-1-contents">
-                            <h2>Lehotzki Gabriella</h2>
-                            <ul style="text-align: left">
-                                <li>Frissítő arc és dekoltázs masszázs</li>
-                                <li>Frissítő talpmasszázs</li>
-                            </ul>
-{{--                            <p>Frissítő svéd relaxáló teljes test masszázs, manager masszázs, frissítő arcmasszázs, talpmasszázs, hátmasszázs.</p>--}}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-5">
-                    <div class="post-entry-1 h-100 person-1">
-                        <img src="{{ asset('images/team/toth_eva.jpg') }}" alt="Image" class="img-fluid">
-                        <div class="post-entry-1-contents">
-                            <h2>Tóth Éva</h2>
-                            <ul style="text-align: left">
-                                <li>Frissítő arc és dekoltázs masszázs</li>
-                                <li>Frissítő talpmasszázs</li>
-                                <li>Lélekmasszázs</li>
-                            </ul>
-{{--                            <p>Frissítő svéd relaxáló teljes test masszázs, manager masszázs, frissítő arcmasszázs, talpmasszázs, hátmasszázs.</p>--}}
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </div>

@@ -4,10 +4,10 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <div class="card-header">Szolgáltatások
+                <div class="card-header">Munkatársak
                     <div class="card-body">
                         <div class="form-group">
-                            <a href="{{ route('admin.service.create') }}" class="btn btn-info"><i class="fa fa-plus"></i> Új szolgáltatás</a>
+                            <a href="{{ route('admin.staff.create') }}" class="btn btn-info"><i class="fa fa-plus"></i> Új munkatárs</a>
                         </div>
                         <table class="table table-responsive-sm table-striped">
                             <thead>
@@ -17,13 +17,13 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @forelse($services as $service)
+                            @forelse($staff as $employee)
                                 <tr>
-                                    @include('service.partials.table-row')
+                                    @include('admin.staff.partials.table-row')
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="3">Egy szolgáltatás sem található...</td>
+                                    <td colspan="2">Egy munkatárs sem található...</td>
                                 </tr>
                             @endforelse
                             </tbody>

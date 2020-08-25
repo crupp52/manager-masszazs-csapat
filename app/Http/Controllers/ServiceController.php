@@ -14,7 +14,7 @@ class ServiceController extends Controller
     {
         $services = Service::all();
 
-        return view('service.index', [
+        return view('admin.services.index', [
             'services' => $services
         ]);
     }
@@ -27,7 +27,7 @@ class ServiceController extends Controller
             'files' => true
         ]);
 
-        return view('service.form', [
+        return view('admin.services.form', [
             'form' => $form
         ]);
     }
@@ -45,7 +45,7 @@ class ServiceController extends Controller
             'model' => $service
         ]);
 
-        return view('service.form', [
+        return view('admin.services.form', [
             'form' => $form
         ]);
     }
@@ -87,11 +87,7 @@ class ServiceController extends Controller
                 $servicePhoto->filename = $filename;
                 $servicePhoto->save();
 
-                //$photo->storeAs('\images', $filename);
-
                 Storage::disk('public')->putFileAs('images', $photo, $filename);
-
-//                Storage::put('/images/' . $filename, $photo);
             }
         }
 

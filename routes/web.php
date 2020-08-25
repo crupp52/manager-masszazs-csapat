@@ -22,6 +22,14 @@ Route::group(['middleware' => ['auth']], function () {
             Route::post('save/{id?}', 'ServiceController@save')->name('save');
         });
 
+        Route::prefix('staff')->name('staff.')->group(function () {
+            Route::get('index', 'StaffController@index')->name('index');
+            Route::get('create', 'StaffController@create')->name('create');
+            Route::get('edit/{id}', 'StaffController@edit')->name('edit');
+            Route::get('delete/{id}', 'StaffController@delete')->name('delete');
+            Route::post('save/{id?}', 'StaffController@save')->name('save');
+        });
+
         Route::prefix('service-photo')->name('service-photo.')->group(function () {
             Route::get('delete/{id}', 'ServiceController@deletePhoto')->name('delete');
         });

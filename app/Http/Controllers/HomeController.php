@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
-use Illuminate\Http\Request;
+use App\Models\Staff;
 
 class HomeController extends Controller
 {
@@ -28,7 +28,11 @@ class HomeController extends Controller
 
     public function team()
     {
-        return view('team.index');
+        $staff = Staff::where('status', 1)->get();
+
+        return view('team.index', [
+            'staff' => $staff
+        ]);
     }
 
     public function contact()

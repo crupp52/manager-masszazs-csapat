@@ -8,6 +8,13 @@
         </a>
     </li>
     <li class="c-sidebar-nav-item">
+        <a class="c-sidebar-nav-link" href="{{ route('admin.staff.index') }}">
+            <span class="c-sidebar-nav-icon">
+                <i class="fa fa-users"></i>
+            </span> Munkatársak
+        </a>
+    </li>
+    <li class="c-sidebar-nav-item">
         <a class="c-sidebar-nav-link" href="https://cpanel11.rackforest.com:2096/webmaillogout.cgi" target="_blank">
             <span class="c-sidebar-nav-icon">
                 <i class="fa fa-envelope"></i>

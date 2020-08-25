@@ -15,6 +15,7 @@ class UploadedPhotoField extends FormField
     {
         $options['filename'] = $this->getOption('filename', null);
         $options['id'] = $this->getOption('id', null);
+        $options['delete_button'] = $this->getOption('delete_button', true);
 
         if ($options['filename'] != null) {
             $options['url'] = Storage::disk('public')->url('/images/'.$options['filename']);
