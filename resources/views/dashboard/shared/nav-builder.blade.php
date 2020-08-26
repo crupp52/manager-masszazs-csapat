@@ -1,7 +1,7 @@
 <div class="c-sidebar-brand"><h3>Admin</h3></div>
 <ul class="c-sidebar-nav">
     <li class="c-sidebar-nav-item">
-        <a class="c-sidebar-nav-link" href="{{ route('admin.service.edit', ['id' => 1000]) }}">
+        <a class="c-sidebar-nav-link" href="{{ route('admin.service.edit', ['id' => 1]) }}">
             <span class="c-sidebar-nav-icon">
                 <i class="fa fa-home"></i>
             </span> Főoldal szerkesztése

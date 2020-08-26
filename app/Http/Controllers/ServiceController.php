@@ -12,7 +12,7 @@ class ServiceController extends Controller
 {
     public function index()
     {
-        $services = Service::all();
+        $services = Service::where('status', 1)->where('id', '>=', 1000)->get();
 
         return view('admin.services.index', [
             'services' => $services
