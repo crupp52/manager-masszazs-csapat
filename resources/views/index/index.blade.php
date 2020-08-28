@@ -20,6 +20,9 @@
     <div class="site-section" id="content">
         <div class="container">
             <div class="row">
+                <div class="col-md-3 m-auto">
+                    <img style="margin-bottom: 30px; border-radius: 10px; border: 4px solid lightgray" class="img-fluid" src="{{ asset('images/team/horvath_viktoria.jpg') }}" alt="">
+                </div>
                 <div class="col-md-12 blog-content">
                     {!! $service->description !!}
                 </div>
